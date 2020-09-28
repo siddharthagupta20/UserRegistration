@@ -5,7 +5,6 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 public class UserRegistration {
-
 	Scanner in = new Scanner(System.in);
 
 	public void firstNameValidator() {
@@ -36,19 +35,81 @@ public class UserRegistration {
 	}
 
 	public void emailValidator() {
-		System.out.println("Enter your Email :");
-		String email = in.next();
-		in.nextLine();
+		
+		String email = "abc@yahoo.com";
 		Pattern pattern = Pattern
-				.compile("^([a-z]){1,}([.+_-]){0,1}[0-9a-z]*(@){1}([0-9a-z]*)(.([a-z]){2,}){1}(.[a-z][a-z])?$");
+				.compile("^([a][b][c])([_+-.]{0,1}([a-zA-Z0-9]+))*[@][a-z0-9]{1,}[.]([c][o][m]|[n][e][t])([.][a-zA-Z]{2,}){0,1}$");
 		Matcher matcher = pattern.matcher(email);
 		Boolean b = matcher.find();
 		if (b)
-			System.out.println("Email is Validated");
+			System.out.println("Email is Valid "+email);
 		else
-			System.out.println("Please enter the correct mail id");
+			System.out.println("Incorrect Email "+email);
+		
+		email="abc-100@yahoo.com";
+		 matcher = pattern.matcher(email);
+		 b = matcher.find();
+		if (b)
+			System.out.println("Email is Valid "+email);
+		else
+			System.out.println("Incorrect Email "+email);
+		
+		email="abc.100@yahoo.com";
+		 matcher = pattern.matcher(email);
+		 b = matcher.find();
+		if (b)
+			System.out.println("Email is Valid "+email);
+		else
+			System.out.println("Incorrect Email "+email);
+		
+		email="abc111@abc.com";
+		 matcher = pattern.matcher(email);
+		 b = matcher.find();
+		if (b)
+			System.out.println("Email is Valid "+email);
+		else
+			System.out.println("Incorrect Email "+email);
+		
+		email="abc-100@abc.net";
+		 matcher = pattern.matcher(email);
+		 b = matcher.find();
+		if (b)
+			System.out.println("Email is Valid "+email);
+		else
+			System.out.println("Incorrect Email "+email);
+		
+		email="abc.100@abc.com.au";
+		 matcher = pattern.matcher(email);
+		 b = matcher.find();
+		if (b)
+			System.out.println("Email is Valid "+email);
+		else
+			System.out.println("Incorrect Email "+email);
+		
+		email="abc@1.com";
+		 matcher = pattern.matcher(email);
+		 b = matcher.find();
+		if (b)
+			System.out.println("Email is Valid "+email);
+		else
+			System.out.println("Incorrect Email "+email);
+		
+		email="abc@gmail.com.com";
+		 matcher = pattern.matcher(email);
+		 b = matcher.find();
+		if (b)
+			System.out.println("Email is Valid "+email);
+		else
+			System.out.println("Incorrect Email "+email);
+		
+		email="abc+100@gmail.com";
+		 matcher = pattern.matcher(email);
+		 b = matcher.find();
+		if (b)
+			System.out.println("Incorrect Email "+email);
+		else
+			System.out.println("Incorrect Email "+email);
 	}
-
 	public void mobileNoValidator() {
 		System.out.println("Enter your Mobile No :");
 		String mobileNo = in.nextLine();
@@ -60,7 +121,6 @@ public class UserRegistration {
 		else
 			System.out.println("Please enter the correct mobile no");
 	}
-
 	public void passwordValidator() {
 		System.out.println("Enter your Password :");
 		String password = in.next();
@@ -73,19 +133,22 @@ public class UserRegistration {
 			System.out.println("Please enter the correct password");
 	}
 
+
 	public static void main(String[] args) {
 		System.out.println("Welcome to User Registration Page");
 		UserRegistration newUser = new UserRegistration();
+		
+	
 		// for first name
-		 newUser.firstNameValidator();
+	    //newUser.firstNameValidator();
 		// for last name
-		 newUser.lastNameValidator();
+		//newUser.lastNameValidator();
 		// for email
-		 newUser.emailValidator();
+		newUser.emailValidator();
 		// for mobile no
-		 newUser.mobileNoValidator();
-		// for password
-		newUser.passwordValidator();
+		//newUser.mobileNoValidator();
+		//for password
+		//newUser.passwordValidator();
+	
 	}
-
 }
